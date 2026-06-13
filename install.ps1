@@ -21,6 +21,7 @@ try {
     if (Test-Path $ExePath) {
         Remove-Item -Path $ExePath -Force
     }
+    $ProgressPreference = 'SilentlyContinue'
     Invoke-WebRequest -Uri $DownloadUrl -OutFile $ExePath -UseBasicParsing
     Write-Host "✓ Downloaded dagent.exe successfully." -ForegroundColor Green
 } catch {
