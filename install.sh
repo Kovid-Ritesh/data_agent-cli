@@ -5,7 +5,7 @@ set -e
 
 INSTALL_DIR="$HOME/.dagent/bin"
 EXE_PATH="$INSTALL_DIR/dagent"
-DOWNLOAD_URL="https://github.com/your-username/dataagent-cli/releases/latest/download/dagent"
+DOWNLOAD_URL="https://github.com/Kovid-Ritesh/data_agent-cli/releases/latest/download/dagent"
 
 echo "Installing DataAgent CLI..."
 

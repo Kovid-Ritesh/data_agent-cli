@@ -12,7 +12,7 @@ echo ""
 INSTALL_DIR="$HOME/.dagent/bin"
 EXE_PATH="$INSTALL_DIR/dagent"
 LOCAL_URL="http://localhost:8000/download/dagent"
-FALLBACK_URL="https://github.com/your-username/dataagent-cli/releases/latest/download/dagent"
+FALLBACK_URL="https://github.com/Kovid-Ritesh/data_agent-cli/releases/latest/download/dagent"
 
 echo "[1/3] Creating installation directory..."
 mkdir -p "$INSTALL_DIR"
