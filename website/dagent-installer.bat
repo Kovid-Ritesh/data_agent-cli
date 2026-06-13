@@ -15,7 +15,7 @@ echo.
 set "INSTALL_DIR=%USERPROFILE%\.dagent\bin"
 set "EXE_PATH=%INSTALL_DIR%\dagent.exe"
 set "LOCAL_URL=http://localhost:8000/download/dagent.exe"
-set "FALLBACK_URL=https://github.com/your-username/dataagent-cli/releases/latest/download/dagent.exe"
+set "FALLBACK_URL=https://github.com/Kovid-Ritesh/data_agent-cli/releases/latest/download/dagent.exe"
 
 echo [1/3] Creating installation directory...
 if not exist "%INSTALL_DIR%" (

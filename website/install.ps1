@@ -5,7 +5,7 @@ $ErrorActionPreference = "Stop"
 $InstallDir = Join-Path $HOME ".dagent\bin"
 $ExePath = Join-Path $InstallDir "dagent.exe"
 # Update this URL to where the executable release is hosted
-$DownloadUrl = "https://github.com/your-username/dataagent-cli/releases/latest/download/dagent.exe"
+$DownloadUrl = "https://github.com/Kovid-Ritesh/data_agent-cli/releases/latest/download/dagent.exe"
 
 Write-Host "Installing DataAgent CLI..." -ForegroundColor Cyan
 
