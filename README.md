@@ -25,14 +25,14 @@ It includes both a fast **Command Line Interface (CLI)** and a sleek, responsive
 #### Windows (PowerShell)
 To install the standalone `dagent.exe` binary and register it in your User PATH automatically, run:
 ```powershell
-powershell -c "irm https://dagent.in/install.ps1 | iex"
+powershell -c "irm https://kovid-ritesh.github.io/data_agent-cli/install.ps1 | iex"
 ```
-*Alternatively, download and double-click the [dagent-installer.bat](https://dagent.in/dagent-installer.bat) script.*
+*Alternatively, download and double-click the [dagent-installer.bat](https://kovid-ritesh.github.io/data_agent-cli/dagent-installer.bat) script.*
 
 #### macOS / Linux
 To download the executable and register the path, run:
 ```bash
-curl -fsSL https://dagent.in/install.sh | sh
+curl -fsSL https://kovid-ritesh.github.io/data_agent-cli/install.sh | sh
 ```
 
 ---
