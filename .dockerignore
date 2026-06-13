@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+*.pyo
+.env
+.git
+.gitignore
+test_data/
+test_smoke.py
+*.md
+uploads/
+output/
+charts/
+sales_report.pdf

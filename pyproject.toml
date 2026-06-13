@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dataagent-cli"
+version = "1.0.0"
+description = "DataAgent CLI — interactive developer & data analysis agent powered by Google Gemini."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "google-genai",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "openpyxl",
+    "pyarrow",
+    "tabulate",
+    "rich",
+    "python-dotenv",
+    "fastapi",
+    "uvicorn[standard]",
+    "python-multipart",
+]
+
+[project.scripts]
+dagent = "main:main"
+
+[tool.setuptools]
+py-modules = ["main"]
+packages = ["agent", "data", "tools"]

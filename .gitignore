@@ -1,0 +1,25 @@
+# Environments
+.env
+.env.local
+.env.*
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller / Build
+build/
+dist/
+*.spec
+
+# Application outputs, charts, and uploads
+output/
+uploads/
+charts/
+test_output/
+*.pdf
+
+# Python package metadata
+dataagent_cli.egg-info/
+.pytest_cache/

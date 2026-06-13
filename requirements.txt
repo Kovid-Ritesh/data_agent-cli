@@ -1,0 +1,12 @@
+google-genai
+pandas
+numpy
+matplotlib
+openpyxl
+pyarrow
+tabulate
+rich
+python-dotenv
+fastapi
+uvicorn[standard]
+python-multipart

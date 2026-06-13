@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: dataagent
+    runtime: docker
+    plan: free
+    repo: https://github.com/YOUR_USERNAME/data_analyse_agent  # ← Update this
+    dockerfilePath: ./cli_agent/Dockerfile
+    dockerContext: ./cli_agent
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false  # Set manually in Render dashboard
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
+      - key: DEBUG
+        value: "false"
+    healthCheckPath: /
+    autoDeploy: true
