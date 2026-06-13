@@ -51,20 +51,30 @@ pip install git+https://github.com/Kovid-Ritesh/data_agent-cli.git
 DataAgent runs under your own Google AI Studio Gemini API key. This guarantees privacy and zero server costs.
 
 1. Get a free API key from the **[Google AI Studio](https://aistudio.google.com/)** dashboard.
-2. Add the API key to your environment variables:
+2. Configure your system to expose the API key:
 
-**Windows (PowerShell)**:
-```powershell
-$env:GEMINI_API_KEY="your_api_key_here"
+### Method 1: Permanent Global Variable (Recommended)
+This saves the key permanently so `dagent` can access it from any terminal.
+
+- **Windows (PowerShell)**:
+  Run this command once, then restart your terminal:
+  ```powershell
+  [Environment]::SetEnvironmentVariable("GEMINI_API_KEY", "your_api_key_here", "User")
+  ```
+- **macOS / Linux**:
+  Add the following line to your `~/.bashrc` or `~/.zshrc` file:
+  ```bash
+  export GEMINI_API_KEY="your_api_key_here"
+  ```
+
+### Method 2: Global `.env` File
+You can create a file named `.env` directly in the installer directory (`%USERPROFILE%/.dagent/bin/.env` on Windows, or `~/.dagent/bin/.env` on macOS/Linux):
+```env
+GEMINI_API_KEY=your_api_key_here
 ```
 
-**macOS / Linux**:
-```bash
-export GEMINI_API_KEY="your_api_key_here"
-```
-
-**Using `.env` file**:
-Alternatively, create a file named `.env` in the directory you run the command from, or in the package directory:
+### Method 3: Local `.env` File (Project-Specific)
+Create a `.env` file in the specific directory you run the `dagent` command from:
 ```env
 GEMINI_API_KEY=your_api_key_here
 ```
