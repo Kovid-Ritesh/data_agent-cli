@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataAgent CLI — AI Data Analyst in Your Terminal</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-terminal logo-icon"></i>
+                <span class="logo-text">DataAgent <span class="badge">v1.0.0</span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#demo">Live Demo</a>
+                <a href="#install">Install</a>
+                <a href="#api-setup">Get API Key</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="/app" class="btn btn-secondary btn-sm" style="margin-right: 10px;"><i class="fa-solid fa-chart-line"></i> Web Dashboard</a>
+                <a href="#install" class="btn btn-primary btn-sm">Download Exe</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="container hero-content">
+            <div class="hero-badge-container">
+                <span class="hero-badge"><i class="fa-solid fa-sparkles"></i> Powered by Google Gemini 2.5</span>
+            </div>
+            <h1 class="hero-title">An Autonomous AI Data Analyst <br><span class="gradient-text">Directly in Your Terminal</span></h1>
+            <p class="hero-subtitle">
+                DataAgent is a local CLI agent that scans your folders, loads your datasets, and runs sandboxed Python code to analyze data, plot charts, and execute system tasks. Fully private, fully autonomous, and runs in seconds.
+            </p>
+            
+            <div class="hero-ctas">
+                <a href="/app" class="btn btn-secondary"><i class="fa-solid fa-chart-line"></i> Launch Web App</a>
+                <a href="#install" class="btn btn-primary"><i class="fa-solid fa-download"></i> Get Standalone Executable</a>
+            </div>
+
+            <!-- Command Copy Box -->
+            <div class="code-box-hero">
+                <span class="code-prefix">$</span>
+                <code id="pip-cmd-hero">pip install git+https://github.com/your-username/dataagent-cli.git</code>
+                <button class="copy-btn" onclick="copyText('pip-cmd-hero', this)" title="Copy to clipboard">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Built for Speed, Privacy, and Power</h2>
+                <p class="section-subtitle">DataAgent runs entirely inside your terminal session. It does not use external web servers, keeping your datasets secure.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon-container bg-violet">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>100% Local Sandboxing</h3>
+                    <p>All Python code is executed inside a persistent local sandbox on your machine. Your private data is never sent to third-party databases.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon-container bg-blue">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3>Zero Configuration Startup</h3>
+                    <p>Launch the tool in any folder. It automatically auto-discovers and loads up to 10 CSV, TSV, Parquet, Excel, or SQLite files in seconds without blocking prompts.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon-container bg-green">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>Self-Correcting Code Loop</h3>
+                    <p>If Python code throws errors or missing packages are requested, the agent dynamically catches the traceback, runs pip installs, and self-corrects on the fly.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon-container bg-red">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <h3>Autonomous CLI Power</h3>
+                    <p>The agent can run terminal commands (like listing directories or copying files) with your interactive approval to automate tedious developer workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terminal Live Simulation Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Watch the ReAct Loop in Action</h2>
+                <p class="section-subtitle">See how the agent thinks, writes code, executes it, and refines answers autonomously.</p>
+            </div>
+
+            <!-- CSS Terminal Mockup -->
+            <div class="terminal-mockup">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="btn-dot close"></span>
+                        <span class="btn-dot minimize"></span>
+                        <span class="btn-dot expand"></span>
+                    </div>
+                    <span class="terminal-title">DataAgent CLI Terminal Session</span>
+                </div>
+                <div class="terminal-body" id="terminal-content">
+                    <!-- Typing demo will be dynamically injected here by script.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="install" class="install-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get Started in Seconds</h2>
+                <p class="section-subtitle">Choose the installation method that fits your environment.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="switchTab(event, 'exe-tab')">
+                    <i class="fa-solid fa-box"></i> Standalone Exe (No Python)
+                </button>
+                <button class="tab-btn" onclick="switchTab(event, 'pip-tab')">
+                    <i class="fa-brands fa-python"></i> Python Package (Pip)
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-contents">
+                <!-- EXE Tab -->
+                <div id="exe-tab" class="tab-panel active">
+                    <div class="step-list">
+                        <div class="step-item">
+                            <span class="step-num">1</span>
+                            <div class="step-details">
+                                <h4>One-Click Terminal Installation (Recommended)</h4>
+                                <p>Open your terminal and run the command to download, install, and add the agent to your system Path automatically:</p>
+                                
+                                <div class="terminal-install-option">
+                                    <span class="platform-label"><i class="fa-brands fa-windows"></i> Windows (PowerShell)</span>
+                                    <div class="code-box">
+                                        <span class="code-prefix">></span>
+                                        <code id="powershell-install-web">powershell -c "irm https://raw.githubusercontent.com/your-username/dataagent-cli/main/website/install.ps1 | iex"</code>
+                                        <button class="copy-btn" onclick="copyText('powershell-install-web', this)"><i class="fa-regular fa-copy"></i></button>
+                                    </div>
+                                    <div class="script-download-label" style="margin-top: 6px; font-size: 0.85rem;">
+                                        <span style="color: #9ca3af;">Or download double-click installer:</span>
+                                        <a href="/website/dagent-installer.bat" download style="color: #06b6d4; text-decoration: underline; margin-left: 5px; font-weight: 500;"><i class="fa-solid fa-file-code"></i> dagent-installer.bat</a>
+                                    </div>
+                                </div>
+
+                                <div class="terminal-install-option">
+                                    <span class="platform-label"><i class="fa-brands fa-apple"></i> <i class="fa-brands fa-linux"></i> macOS / Linux (Shell)</span>
+                                    <div class="code-box">
+                                        <span class="code-prefix">$</span>
+                                        <code id="sh-install-web">curl -fsSL https://raw.githubusercontent.com/your-username/dataagent-cli/main/website/install.sh | sh</code>
+                                        <button class="copy-btn" onclick="copyText('sh-install-web', this)"><i class="fa-regular fa-copy"></i></button>
+                                    </div>
+                                    <div class="script-download-label" style="margin-top: 6px; font-size: 0.85rem;">
+                                        <span style="color: #9ca3af;">Or download installer script:</span>
+                                        <a href="/website/dagent-installer.sh" download style="color: #06b6d4; text-decoration: underline; margin-left: 5px; font-weight: 500;"><i class="fa-solid fa-file-code"></i> dagent-installer.sh</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-num">2</span>
+                            <div class="step-details">
+                                <h4>Alternative: Manual Download</h4>
+                                <p>If you prefer a manual setup, download the pre-compiled `dagent.exe` executable and copy it to any directory on your system PATH:</p>
+                                <a href="/download/dagent.exe" class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i> Download dagent.exe</a>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-num">3</span>
+                            <div class="step-details">
+                                <h4>Verify Installation</h4>
+                                <p>Open a NEW Command Prompt (CMD) or PowerShell window in any directory containing data files and type:</p>
+                                <div class="code-box">
+                                    <span class="code-prefix">$</span>
+                                    <code id="exe-run-cmd">dagent</code>
+                                    <button class="copy-btn" onclick="copyText('exe-run-cmd', this)"><i class="fa-regular fa-copy"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PIP Tab -->
+                <div id="pip-tab" class="tab-panel">
+                    <div class="step-list">
+                        <div class="step-item">
+                            <span class="step-num">1</span>
+                            <div class="step-details">
+                                <h4>Install Package via Git</h4>
+                                <p>Ensure you have Python 3.9+ installed, then run the pip command to download and build the script globally:</p>
+                                <div class="code-box">
+                                    <span class="code-prefix">$</span>
+                                    <code id="pip-install-cmd">pip install git+https://github.com/your-username/dataagent-cli.git</code>
+                                    <button class="copy-btn" onclick="copyText('pip-install-cmd', this)"><i class="fa-regular fa-copy"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-num">2</span>
+                            <div class="step-details">
+                                <h4>Run in Interactive Mode</h4>
+                                <p>Open your command line in any directory containing files and run:</p>
+                                <div class="code-box">
+                                    <span class="code-prefix">$</span>
+                                    <code id="pip-run-cmd">dagent</code>
+                                    <button class="copy-btn" onclick="copyText('pip-run-cmd', this)"><i class="fa-regular fa-copy"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-num">3</span>
+                            <div class="step-details">
+                                <h4>Execute Single Queries (Inline Mode)</h4>
+                                <p>You can also execute questions directly from terminal parameters and exit:</p>
+                                <div class="code-box">
+                                    <span class="code-prefix">$</span>
+                                    <code id="pip-query-cmd">dagent "Read sales.csv and output a summary of region vs revenue"</code>
+                                    <button class="copy-btn" onclick="copyText('pip-query-cmd', this)"><i class="fa-regular fa-copy"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Setup Section -->
+    <section id="api-setup" class="api-section">
+        <div class="container">
+            <div class="api-card">
+                <div class="api-glow"></div>
+                <div class="api-header-box">
+                    <i class="fa-solid fa-key api-key-icon"></i>
+                    <h2>Configure Your Google Gemini API Key</h2>
+                    <p>DataAgent requires your own API key to make reasoning requests to Gemini. This keeps your costs at zero and ensures your key is never shared.</p>
+                </div>
+
+                <div class="guide-steps-grid">
+                    <!-- Step 1 -->
+                    <div class="guide-step">
+                        <div class="guide-number">1</div>
+                        <h4>Visit Google AI Studio</h4>
+                        <p>Go to the official <a href="https://aistudio.google.com/" target="_blank" rel="noopener">Google AI Studio <i class="fa-solid fa-up-right-from-square"></i></a> dashboard and log in with your normal Google account.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="guide-step">
+                        <div class="guide-number">2</div>
+                        <h4>Create Key</h4>
+                        <p>Click the blue **"Get API Key"** button in the top left, then select **"Create API Key in new project"**. Copy the generated key token.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="guide-step">
+                        <div class="guide-number">3</div>
+                        <h4>Set Environment Variable</h4>
+                        <p>Set it globally in your terminal. For example, in PowerShell:</p>
+                        <div class="code-box">
+                            <span class="code-prefix">$</span>
+                            <code id="powershell-key-cmd">$env:GEMINI_API_KEY="your_api_key_here"</code>
+                            <button class="copy-btn" onclick="copyText('powershell-key-cmd', this)"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <p class="subtext">Or create a file named `.env` containing `GEMINI_API_KEY=your_key` in the folder you run `dagent` from.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <i class="fa-solid fa-terminal logo-icon"></i>
+                <span>DataAgent CLI</span>
+            </div>
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#demo">Demo</a>
+                <a href="#install">Install</a>
+                <a href="https://aistudio.google.com/" target="_blank" rel="noopener">Get Gemini Key</a>
+            </div>
+            <p class="copyright">&copy; 2026 DataAgent CLI Project. Released under MIT License. All data is processed locally.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
