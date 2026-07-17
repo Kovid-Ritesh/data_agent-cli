@@ -148,7 +148,3 @@ pyinstaller dagent.spec
 *Note: The `dagent.spec` config is pre-optimized to exclude heavy scientific modules (like Torch, SciPy, pytest) to keep the compiled binary compile time and size minimal.*
 
 ---
-
-## License 📄
-
-This project is licensed under the MIT License. Feel free to use and distribute. All data is processed locally under your own API key.
